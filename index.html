@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="app">
+		<ol>
+			<li v-for="name in names">{{ name }}</li>
+		</ol>
+		<input v-model="namefield" type="text">
+		<button v-on:click="addName">Añadir Nombre</button>
+	</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			names: [ 'Edmundo', 'Richard', 'Angela', 'Bruno' ],
+			namefield: ''
+		},
+		methods: {
+			addName() {
+				this.names.push(this.namefield);
+				this.namefield = '';
+			}
+		}
+	})
+</script>
+</body>
+</html>
